@@ -21,10 +21,10 @@ const TabElement = (props) => {
     )
 }
 
-const B = (fixedHeightPaper) => {
-    // console.log("Rendered b");
-    return <TabElement text={"Type B Component"} fixedHeightPaper={fixedHeightPaper} />
-}
+// const B = (fixedHeightPaper) => {
+//     // console.log("Rendered b");
+//     return <TabElement text={"Type B Component"} fixedHeightPaper={fixedHeightPaper} />
+// }
 
 const C = (fixedHeightPaper) => {
     // console.log("Rendered c");
@@ -73,7 +73,9 @@ const Factory = (props) => {
 
 
 const areEqual = (prevProps, nextProps) => {
-    return _.isEqual(prevProps, nextProps);
+    // console.log("prevProps", prevProps)
+    // console.log("nextProps", nextProps)
+    return _.isEqual(prevProps.component, nextProps.component);
 };
 
 export default React.memo(Factory, areEqual);
